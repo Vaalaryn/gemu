@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, ScrollView, TouchableOpacity} from 'react-native';
+import {Text, View, ScrollView, TouchableOpacity, Button} from 'react-native';
 import {styleListeView} from '../style/styleListeView';
 
 handleProductPress = (nom) => {
@@ -11,30 +11,30 @@ export default class ListeView extends React.Component {
 
     constructor() {
         super();
-        this.data = this.getGameFromApi();
+        this.state = {datas: []}
     }
 
-    async componentDidMount() {
-        this.data = await this.getGameFromApi();
-        console.log(this.data);
+    componentDidMount() {
+        this.getGameFromApi();
     }
 
 
     getGameFromApi() {
         try {
-            let response = fetch(
-                'https://api.rawg.io/api/games?page_size=5', {
+            fetch(
+                // 'https://jsonplaceholder.typicode.com/todos', {
+                'https://api.rawg.io/api/games?page_size=10', {
                     method: 'GET',
                     headers: {
                         Accept: 'application/json',
                         'Content-Type': 'application/json',
                     }
-                }).then((res) => {
-                    res.json().then((json)=>{
-                        console.log(json);
-                    });
-                }
-            );
+                })
+                .then((res) => res.json()
+                    .then((json) => {
+                        this.setState({datas: json.results});
+                    })
+                );
         } catch
             (error) {
             console.error(error);
@@ -43,23 +43,17 @@ export default class ListeView extends React.Component {
 
     render() {
         return (
-            <ScrollView style={styleListeView.listContainer}>
-                {/*{*/}
-                {/*    this.data.map(*/}
-                {/*        (data) => {*/}
-                {/*            return (*/}
-                {/*                <TouchableOpacity onPress={() => handleProductPress(data.nom)}>*/}
-                {/*                    <Text>{data.nom}</Text>*/}
-                {/*                    <Text>{data.platform}</Text>*/}
-                {/*                    <Text>{data.status}</Text>*/}
-                {/*                </TouchableOpacity>*/}
-                {/*            )*/}
-                {/*        }*/}
-                {/*    )*/}
-
-                {/*}*/}
-            </ScrollView>
+            <View>
+                <ScrollView style={styleListeView.listContainer}>
+                    {this.state.datas.map((data) => {
+                        return (<Text>{data.id} - {data.name}</Text>)
+                    })}
+                </ScrollView>
+                <Button
+                    title="Learn More"
+                    onPress={() => this.getGameFromApi}
+                />
+            </View>
         )
-    }
-    ;
+    };
 }
