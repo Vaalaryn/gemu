@@ -11,5 +11,8 @@ export const styles = StyleSheet.create({
         height: '92%',
         width: '100%',
         backgroundColor: 'white'
+    },
+    navbar: {
+        height: '8%'
     }
 });
