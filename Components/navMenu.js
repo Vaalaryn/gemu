@@ -1,5 +1,10 @@
 import React from 'react';
-import { Text, View, TouchableOpacity} from 'react-native';
+import {Text, View, TouchableOpacity} from 'react-native';
+import {stylesNavMenu} from '../style/navMenuStyle'
+
+f = () => {
+    alert("coucou");
+};
 
 export default class NavMenu extends React.Component {
     constructor() {
@@ -8,15 +13,21 @@ export default class NavMenu extends React.Component {
 
     render() {
         return (
-            <View>
-                <TouchableOpacity>
-                    <Text>Liste</Text>
+            <View style={stylesNavMenu.navBar}>
+                <TouchableOpacity
+                    onPress={f}
+                    style={stylesNavMenu.button}>
+                    <Text style={stylesNavMenu.buttonText}>Liste</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text>Search</Text>
+                <TouchableOpacity
+                    onPress={f}
+                    style={stylesNavMenu.button}>
+                    <Text style={stylesNavMenu.buttonText}>Search</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text>Profil</Text>
+                <TouchableOpacity
+                    onPress={f}
+                    style={stylesNavMenu.button}>
+                    <Text style={stylesNavMenu.buttonText}>Profil</Text>
                 </TouchableOpacity>
             </View>
         )

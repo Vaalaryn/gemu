@@ -7,4 +7,9 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    view: {
+        height: '92%',
+        width: '100%',
+        backgroundColor: 'white'
+    }
 });
