@@ -23,7 +23,7 @@ export default class ListeView extends React.Component {
         try {
             fetch(
                 // 'https://jsonplaceholder.typicode.com/todos', {
-                'https://api.rawg.io/api/games?page_size=10', {
+                'https://api.rawg.io/api/games?page_size=51', {
                     method: 'GET',
                     headers: {
                         Accept: 'application/json',
@@ -43,17 +43,17 @@ export default class ListeView extends React.Component {
 
     render() {
         return (
-            <View>
-                <ScrollView style={styleListeView.listContainer}>
-                    {this.state.datas.map((data) => {
-                        return (<Text>{data.id} - {data.name}</Text>)
-                    })}
-                </ScrollView>
-                <Button
-                    title="Learn More"
-                    onPress={() => this.getGameFromApi}
-                />
-            </View>
+            <ScrollView style={styleListeView.listContainer}>
+                {this.state.datas.map((data) => {
+                    return (
+                        <View key={data.id} style={styleListeView.listElement}>
+                            <Text>{data.name}</Text>
+                            <Text>{data.metacritic}</Text>
+                            <Text>Status</Text>
+                        </View>
+                    )
+                })}
+            </ScrollView>
         )
     };
 }
