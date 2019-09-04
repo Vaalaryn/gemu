@@ -1,11 +1,7 @@
 import React from 'react';
 import {Text, View, ScrollView, TouchableOpacity, Button} from 'react-native';
 import {styleListeView} from '../style/styleListeView';
-
-handleProductPress = (nom) => {
-    alert(nom);
-};
-
+import SearchView from './SearchView';
 
 export default class ListeView extends React.Component {
 
@@ -43,17 +39,20 @@ export default class ListeView extends React.Component {
 
     render() {
         return (
-            <ScrollView style={styleListeView.listContainer}>
-                {this.state.datas.map((data) => {
-                    return (
-                        <View key={data.id} style={styleListeView.listElement}>
-                            <Text>{data.name}</Text>
-                            <Text>{data.metacritic}</Text>
-                            <Text>Status</Text>
-                        </View>
-                    )
-                })}
-            </ScrollView>
+            <View>
+                <SearchView/>
+                <ScrollView style={styleListeView.listContainer}>
+                    {this.state.datas.map((data) => {
+                        return (
+                            <View key={data.id} style={styleListeView.listElement}>
+                                <Text>{data.name}</Text>
+                                <Text>{data.metacritic}</Text>
+                                <Text>Status</Text>
+                            </View>
+                        )
+                    })}
+                </ScrollView>
+            </View>
         )
     };
 }

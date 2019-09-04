@@ -1,8 +1,8 @@
 import React from 'react';
+import { View, Button } from 'react-native';
 import { SearchBar, CheckBox } from 'react-native-elements';
-import { View } from 'react-native';
 
-export default class App extends React.Component {
+export default class SearchView extends React.Component {
     state = {
         search: '',
     };
