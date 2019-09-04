@@ -7,12 +7,11 @@ import {stylesNavMenu} from "../style/navMenuStyle";
 
 
 export default class ListeScreen extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     static navigationOptions = {
-        title: 'ProfilView',
         header: null,
     };
 
@@ -22,7 +21,7 @@ export default class ListeScreen extends React.Component {
             <View style={styles.container}>
                 <View style={styles.statusBar}/>
                 <View style={styles.view}>
-                    <ListeView/>
+                    <ListeView nav={navigate}/>
                 </View>
                 <View style={stylesNavMenu.navBar}>
                     <TouchableOpacity

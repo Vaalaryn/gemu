@@ -12,7 +12,6 @@ export default class ProfilScreen extends React.Component {
     }
 
     static navigationOptions = {
-        title: 'ProfilView',
         header: null,
     };
 
@@ -22,7 +21,7 @@ export default class ProfilScreen extends React.Component {
             <View style={styles.container}>
                 <View style={styles.statusBar}/>
                 <View style={styles.view}>
-                    <ListeView/>
+                    {/*<ListeView nav={navigate}/>*/}
                 </View>
                 <View style={stylesNavMenu.navBar}>
                     <TouchableOpacity

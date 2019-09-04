@@ -1,31 +1,27 @@
 import React from 'react';
-import {Text, View, ScrollView, TouchableOpacity, Button} from 'react-native';
-import {styleListeView} from '../style/styleListeView';
-import SearchMod from '../Components/SearchView';
-import {styles} from "../style/globalStyle";
+import {StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar} from 'react-native';
+import {styles} from "../style/globalStyle"
+import NavMenu from "../Components/navMenu"
 import ListeView from "../Components/ListeView";
-import NavMenu from "../Components/navMenu";
 import {stylesNavMenu} from "../style/navMenuStyle";
 
-export default class SearchScreen extends React.Component {
 
+export default class SearchScreen extends React.Component {
     constructor() {
         super();
     }
 
     static navigationOptions = {
-        title: 'SearchView',
         header: null,
     };
 
     render() {
-
         const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
                 <View style={styles.statusBar}/>
                 <View style={styles.view}>
-                    <ListeView/>
+                    {/*<ListeView nav={navigate}/>*/}
                 </View>
                 <View style={stylesNavMenu.navBar}>
                     <TouchableOpacity

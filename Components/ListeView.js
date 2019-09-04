@@ -5,15 +5,10 @@ import SearchView from './SearchView';
 
 export default class ListeView extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {datas: []}
     }
-
-    static navigationOptions = {
-        title: 'ListeView',
-        header: null,
-    };
 
     componentDidMount() {
         this.getGameFromApi();
@@ -23,7 +18,6 @@ export default class ListeView extends React.Component {
     getGameFromApi() {
         try {
             fetch(
-                // 'https://jsonplaceholder.typicode.com/todos', {
                 'https://api.rawg.io/api/games?page_size=51', {
                     method: 'GET',
                     headers: {
@@ -43,18 +37,21 @@ export default class ListeView extends React.Component {
     }
 
     render() {
-        // const {navigate} = this.props.navigation;
+        const navigate = this.props.nav;
         return (
             <View>
                 <SearchView/>
                 <ScrollView style={styleListeView.listContainer}>
                     {this.state.datas.map((data) => {
                         return (
-                            <View key={data.id} style={styleListeView.listElement}>
+                            <TouchableOpacity
+                                onPress={() => navigate('Game', {name: data.name, slug: data.slug})}
+                                key={data.id}
+                                style={styleListeView.listElement}>
                                 <Text>{data.name}</Text>
                                 <Text>{data.metacritic}</Text>
                                 <Text>Status</Text>
-                            </View>
+                            </TouchableOpacity>
                         )
                     })}
                 </ScrollView>
