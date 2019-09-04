@@ -4,6 +4,7 @@ import {styles} from "./style/globalStyle"
 import NavMenu from "./Components/navMenu"
 import ListeView from "./Components/ListeView";
 import {stylesNavMenu} from "./style/navMenuStyle";
+import SearchView from './Components/SearchView'
 
 export default class App extends React.Component {
     constructor(){
