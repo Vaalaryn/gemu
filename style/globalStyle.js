@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     view: {
         height: '92%',
         width: '100%',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        marginTop: 29.5
     }
 });
