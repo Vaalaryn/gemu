@@ -8,7 +8,8 @@ export const stylesNavMenu = StyleSheet.create({
         flexDirection: 'row',
         height: '100%',
         backgroundColor: 'white',
-    },navBar: {
+    },
+    navBar: {
         height: 50,
         flex: 1,
         flexDirection: 'row',
