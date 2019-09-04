@@ -7,8 +7,8 @@ import {stylesNavMenu} from "../style/navMenuStyle";
 
 
 export default class SearchScreen extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     static navigationOptions = {
@@ -21,7 +21,7 @@ export default class SearchScreen extends React.Component {
             <View style={styles.container}>
                 <View style={styles.statusBar}/>
                 <View style={styles.view}>
-                    {/*<ListeView nav={navigate}/>*/}
+                    <ListeView nav={navigate}/>
                 </View>
                 <View style={stylesNavMenu.navBar}>
                     <TouchableOpacity

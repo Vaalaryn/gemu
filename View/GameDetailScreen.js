@@ -8,6 +8,7 @@ export default class GameDetailScreen extends React.Component {
     constructor(props) {
         super(props);
         this.gameName = this.props.navigation.state.params.name;
+        this.gameSlug = this.props.navigation.state.params.slug;
     }
 
     static navigationOptions = ({ navigation }) => {
@@ -16,11 +17,37 @@ export default class GameDetailScreen extends React.Component {
         };
     };
 
+    componentDidMount() {
+        this.getGameInfoFromApi();
+    }
+
+    getGameInfoFromApi() {
+        try {
+            let slug = this.gameSlug;
+            fetch(
+                'https://api.rawg.io/api/games/' + slug , {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    }
+                })
+                .then((res) => res.json()
+                    .then((json) => {
+                        // this.setState({datas: json});
+                        console.log(json);
+                    })
+                );
+        } catch
+            (error) {
+            console.error(error);
+        }
+    }
+
     render() {
-        console.log(this.gameName);
         return (
             <View style={styles.container}>
-                <Text>{this.gameName}</Text>
+                <Text>{this.gameSlug}</Text>
             </View>
         );
     }
