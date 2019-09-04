@@ -15,31 +15,20 @@ export default class ListeScreen extends React.Component {
         header: null,
     };
 
+
     render() {
         const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
+                <StatusBar
+                    translucent={false}
+                    barStyle="light-content"
+                    backgroundColor="red" />
                 <View style={styles.statusBar}/>
                 <View style={styles.view}>
                     <ListeView nav={navigate}/>
                 </View>
-                <View style={stylesNavMenu.navBar}>
-                    <TouchableOpacity
-                        onPress={() => navigate('Liste')}
-                        style={stylesNavMenu.button}>
-                        <Text style={stylesNavMenu.buttonText}>Liste</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigate('Home')}
-                        style={stylesNavMenu.button}>
-                        <Text style={stylesNavMenu.buttonText}>Search</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigate('Profile')}
-                        style={stylesNavMenu.button}>
-                        <Text style={stylesNavMenu.buttonText}>Profil</Text>
-                    </TouchableOpacity>
-                </View>
+                <NavMenu nav={navigate}/>
             </View>
         );
     }

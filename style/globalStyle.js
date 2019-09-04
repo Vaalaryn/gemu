@@ -1,5 +1,4 @@
-import {StyleSheet} from "react-native";
-import Constants from 'expo-constants';
+import {StyleSheet, StatusBar} from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
@@ -18,7 +17,7 @@ export const styles = StyleSheet.create({
     },
     statusBar : {
         width: '100%',
-        backgroundColor: 'grey',
-        height: Constants.statusBarHeight
+        backgroundColor: 'white',
+        height: StatusBar.currentHeight
     }
 });

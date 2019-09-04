@@ -23,23 +23,7 @@ export default class ProfilScreen extends React.Component {
                 <View style={styles.view}>
                     {/*<ListeView nav={navigate}/>*/}
                 </View>
-                <View style={stylesNavMenu.navBar}>
-                    <TouchableOpacity
-                        onPress={() => navigate('Liste')}
-                        style={stylesNavMenu.button}>
-                        <Text style={stylesNavMenu.buttonText}>Liste</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigate('Home')}
-                        style={stylesNavMenu.button}>
-                        <Text style={stylesNavMenu.buttonText}>Search</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigate('Profile')}
-                        style={stylesNavMenu.button}>
-                        <Text style={stylesNavMenu.buttonText}>Profil</Text>
-                    </TouchableOpacity>
-                </View>
+                <NavMenu nav={navigate}/>
             </View>
         );
     }
