@@ -10,7 +10,9 @@ export const styles = StyleSheet.create({
     view: {
         height: '92%',
         width: '100%',
-        backgroundColor: 'white',
-        marginTop: 29.5
+        backgroundColor: 'white'
+    },
+    navbar: {
+        height: '8%'
     }
 });
