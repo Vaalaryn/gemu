@@ -1,7 +1,6 @@
 import React from 'react';
 import { SearchBar, CheckBox } from 'react-native-elements';
-import {searchViewStyle} from '../style/searchViewStyle';
-import { View, Button } from 'react-native';
+import { View } from 'react-native';
 
 export default class App extends React.Component {
     state = {
@@ -16,26 +15,11 @@ export default class App extends React.Component {
         const { search } = this.state;
 
         return (
-            <View style={searchViewStyle.Button}>
+            <View>
                 <SearchBar
                     placeholder='Rechercher'
                     onChangeText={this.updateSearch}
                     value={search}/>
-                <Button
-                    color="crimson"
-                    title='Filtre'/>
-                <CheckBox
-                    title={"Année"}
-                    checked={this.state.checked}/>
-                <CheckBox
-                    title={"Plateforme"}
-                    checked={this.state.checked}/>
-                <CheckBox
-                    title={"Genre"}
-                    checked={this.state.checked}/>
-                <Button
-                    color="Green"
-                    title="Valider"/>
             </View>
 
         )
