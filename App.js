@@ -1,40 +1,15 @@
-import React from 'react';
-import {StyleSheet, Text, View, ScrollView, TouchableOpacity} from 'react-native';
-import {styles} from "./style/globalStyle"
-import NavMenu from "./Components/navMenu"
-import ListeView from "./Components/ListeView";
-import {stylesNavMenu} from "./style/navMenuStyle";
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import SearchScreen from "./View/SearchScreen";
+import ProfilScreen from "./View/ProfilScreen";
+import ListeScreen from "./View/ListeScreen";
 
-export default class App extends React.Component {
-    constructor(){
-        super();
-        this.state = {content: <ListeView/>}
-    }
+const MainNavigator = createStackNavigator({
+    Home: {screen: SearchScreen},
+    Profile: {screen: ProfilScreen},
+    Liste: {screen: ListeScreen},
+});
 
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={styles.view}>
-                    {this.state.content}
-                </View>
-                <View style={stylesNavMenu.navBar}>
-                    <TouchableOpacity
-                        onPress={this.navigation}
-                        style={stylesNavMenu.button}>
-                        <Text style={stylesNavMenu.buttonText}>Liste</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={this.navigation}
-                        style={stylesNavMenu.button}>
-                        <Text style={stylesNavMenu.buttonText}>Search</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={this.navigation}
-                        style={stylesNavMenu.button}>
-                        <Text style={stylesNavMenu.buttonText}>Profil</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        );
-    }
-}
+const App = createAppContainer(MainNavigator);
+
+export default App;

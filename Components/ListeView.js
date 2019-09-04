@@ -10,6 +10,11 @@ export default class ListeView extends React.Component {
         this.state = {datas: []}
     }
 
+    static navigationOptions = {
+        title: 'ListeView',
+        header: null,
+    };
+
     componentDidMount() {
         this.getGameFromApi();
     }
@@ -38,6 +43,7 @@ export default class ListeView extends React.Component {
     }
 
     render() {
+        // const {navigate} = this.props.navigation;
         return (
             <View>
                 <SearchView/>

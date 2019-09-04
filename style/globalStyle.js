@@ -1,4 +1,5 @@
 import {StyleSheet} from "react-native";
+import Constants from 'expo-constants';
 
 export const styles = StyleSheet.create({
     container: {
@@ -8,11 +9,16 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     view: {
-        height: '92%',
+        height: '89%',
         width: '100%',
         backgroundColor: 'white'
     },
     navbar: {
-        height: '8%'
+        height: '10%',
+    },
+    statusBar : {
+        width: '100%',
+        backgroundColor: 'grey',
+        height: Constants.statusBarHeight
     }
 });

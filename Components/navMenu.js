@@ -8,7 +8,25 @@ export default class NavMenu extends React.Component {
     }
 
     render() {
-        return null
+        return (
+            <View style={stylesNavMenu.navBar}>
+                <TouchableOpacity
+                    onPress={() => this.props.navigation('ListeView')}
+                    style={stylesNavMenu.button}>
+                    <Text style={stylesNavMenu.buttonText}>Liste</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => this.props.navigation('SearchView')}
+                    style={stylesNavMenu.button}>
+                    <Text style={stylesNavMenu.buttonText}>Search</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => this.props.navigation('ProfilView')}
+                    style={stylesNavMenu.button}>
+                    <Text style={stylesNavMenu.buttonText}>Profil</Text>
+                </TouchableOpacity>
+            </View>
+        )
 
     }
 }

@@ -10,12 +10,12 @@ export const stylesNavMenu = StyleSheet.create({
         backgroundColor: 'white',
     },
     navBar: {
-        height: 50,
+        backgroundColor: 'white',
+        height: '30%',
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        bottom: 0,
         padding: 0
     },
     buttonText: {
