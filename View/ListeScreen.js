@@ -3,7 +3,6 @@ import {StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar} from 'r
 import {styles} from "../style/globalStyle"
 import NavMenu from "../Components/navMenu"
 import ListeView from "../Components/ListeView";
-import {stylesNavMenu} from "../style/navMenuStyle";
 
 
 export default class ListeScreen extends React.Component {
@@ -14,7 +13,6 @@ export default class ListeScreen extends React.Component {
     static navigationOptions = {
         header: null,
     };
-
 
     render() {
         const {navigate} = this.props.navigation;

@@ -2,8 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, ScrollView, TouchableOpacity, StatusBar} from 'react-native';
 import {styles} from "../style/globalStyle"
 import NavMenu from "../Components/navMenu"
-import ListeView from "../Components/ListeView";
-import {stylesNavMenu} from "../style/navMenuStyle";
+import SearchView from "../Components/SearchView";
 
 
 export default class SearchScreen extends React.Component {
@@ -21,7 +20,7 @@ export default class SearchScreen extends React.Component {
             <View style={styles.container}>
                 <View style={styles.statusBar}/>
                 <View style={styles.view}>
-                    <ListeView nav={navigate}/>
+                    <SearchView nav={navigate}/>
                 </View>
                 <NavMenu nav={navigate}/>
             </View>

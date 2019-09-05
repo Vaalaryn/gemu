@@ -21,7 +21,7 @@ export default class ProfilScreen extends React.Component {
             <View style={styles.container}>
                 <View style={styles.statusBar}/>
                 <View style={styles.view}>
-                    {/*<ListeView nav={navigate}/>*/}
+                    <Text>Profil</Text>
                 </View>
                 <NavMenu nav={navigate}/>
             </View>
