@@ -25,7 +25,6 @@ export default class SearchMod extends React.Component {
                     onChangeText={this.updateSearch}
                     value={search}/>
             </View>
-
         )
     };
 }
